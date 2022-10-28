@@ -18,7 +18,10 @@
                     var Cookie = HttpContext.Request.Cookies
                         .ToDictionary(Item => Item.Key, Item => Item.Value);
 
+                    var UrlPath = HttpContext.Request.Path;
+
                     var LangModel = new LangModel()
+                        .SetUrlPath(UrlPath)
                         .SetRoute(RouteValue)
                         .SetLangFromCookie(Cookie);
 

@@ -6,8 +6,10 @@ namespace Rugal.Web.Lang
     {
         public event Action<LangModel> OnCreated;
         public string Language { get; set; }
+        public string UrlPath { get; set; }
         public bool IsRandomLoad { get; set; } = true;
         public bool IsHasLanguage { get; set; } = false;
+        public bool IsHasPath => !string.IsNullOrWhiteSpace(UrlPath);
         public string DefaultLanguage { get; set; } = "en-us";
         public string BaseJsFileName { get; set; } = "Lang";
         public string LangKey { get; set; } = ".AspNetCore.Culture";
@@ -86,6 +88,16 @@ namespace Rugal.Web.Lang
         public virtual LangModel SetIsRandomLoad(bool _IsRandomLoad)
         {
             IsRandomLoad = _IsRandomLoad;
+            return this;
+        }
+        public virtual LangModel SetUrlPath(string _UrlPath)
+        {
+            UrlPath = _UrlPath.ToLower().TrimStart('/').TrimEnd('/');
+            return this;
+        }
+        public virtual LangModel SetLanguage(string _Language)
+        {
+            Language = _Language;
             return this;
         }
         internal virtual string GetLangJsFileName()
