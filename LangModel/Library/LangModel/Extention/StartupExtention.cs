@@ -1,5 +1,9 @@
 ﻿namespace Rugal.Web.Lang
 {
+    /// <summary>
+    /// LangModel v1.0.0
+    /// From Rugal Tu
+    /// </summary>
     public static class StartupExtention
     {
         public static IServiceCollection AddLangModel(this IServiceCollection Services, Action<LangModel> OnCreated = null)
