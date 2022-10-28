@@ -9,7 +9,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddLangModel((Lang) =>
 {
     Lang.SetRouteKey("controller", "action");
-    var s = 1;
 });
 
 
