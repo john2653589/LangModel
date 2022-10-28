@@ -1,7 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Rugal.Web.Lang
+﻿namespace Rugal.Web.Lang
 {
+    /// <summary>
+    /// LangModel v1.0.0
+    /// From Rugal Tu
+    /// </summary>
     public partial class LangModel
     {
         public event Action<LangModel> OnCreated;
